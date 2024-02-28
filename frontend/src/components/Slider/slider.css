@@ -7,6 +7,7 @@
     height: calc(100vh - 137px);
     display: flex;
     align-items: center;
+    color: #fff;
   }
   
   .slider-item .slider-image img {
@@ -83,6 +84,7 @@
     display: flex;
     opacity: 0.4;
     transition: 0.2s ease opacity;
+    background: transparent;
   }
   
   .slider .slider-dots .slider-dot:hover {

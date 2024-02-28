@@ -99,7 +99,10 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /*! base end  */
-
+/* Blog Page Css */
+.blog-page {
+  margin-top: 40px;
+}
 /* base responsive  */
 
 @media (max-width: 1200px) {

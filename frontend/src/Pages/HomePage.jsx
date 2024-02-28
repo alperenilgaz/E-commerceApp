@@ -12,8 +12,7 @@ import Footer from '../components/Layout/Footer/Footer'
 
 const HomePage = () => {
   return (
-        <>
-        <Header/>
+        <>       
         <Policy/>
         <Slider/>
         <Categories/>
@@ -23,7 +22,6 @@ const HomePage = () => {
         <Blog/>
         <Brands/>
         <CampaignSingle/>
-        <Footer/>
         </>
   )
 }
