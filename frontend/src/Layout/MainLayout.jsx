@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/Layout/Header/Header'
 import Footer from '../components/Layout/Footer/Footer'
-import PropTypes from 'prop-types'
+import SearchModal from '../components/Modals/Search/SearchModal'
+
 const MainLayout = ({children}) => {
+    const [isSearchShow, setisSearchShow] = useState(false)
+    
   return (
     <>
-        <Header/>
+        <Header setisSearchShow={setisSearchShow}/>
+        <SearchModal isSearchShow={isSearchShow} setisSearchShow={setisSearchShow}/>
         {children}
         <Footer/>
     </>
@@ -14,6 +18,3 @@ const MainLayout = ({children}) => {
 
 export default MainLayout
 
-MainLayout.PropTypes = {
-    children:PropTypes.node
-}

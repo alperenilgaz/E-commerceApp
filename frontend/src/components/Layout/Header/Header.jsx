@@ -1,6 +1,6 @@
 import React from 'react'
 import './Header.css'
-const Header = () => {
+const Header = ({setisSearchShow}) => {
   return (
     <header>
         <header>
@@ -179,7 +179,7 @@ const Header = () => {
               <a href="account.html" className="header-account">
                 <i className="bi bi-person"></i>
               </a>
-              <button className="search-button">
+              <button onClick={() => setisSearchShow(true)} className="search-button">
                 <i className="bi bi-search"></i>
               </button>
               <a href="#">
