@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { CartContext } from '../../context/CartContext'
 
 const CartTotals = () => {
+    const {cardItem} = useContext(CartContext)
+    const [isCheked, setIsCheked] = useState(false)
+    const CardItemsTotal = cardItem.map((item) => {
+        const itemTotal = item.price.newPrice * item.quantity
+        return itemTotal
+    
+      })
+      const subTotal = CardItemsTotal.reduce((prevValue,currentValue) => {
+        return prevValue+currentValue
+      },0)
+      
+      const cargoPrice = 15
+      const cartTotals = isCheked ? subTotal+cargoPrice : subTotal
   return (
     <div className="cart-totals">
                     <h2>Cart totals
@@ -10,7 +24,7 @@ const CartTotals = () => {
                             <tr className="cart-subtotal">
                                 <th>Subtotal</th>
                                 <td>
-                                    <span id="subtotal">$316.00</span>
+                                    <span id="subtotal">${subTotal}</span>
                                 </td>
                             </tr>
                             <tr>
@@ -20,7 +34,7 @@ const CartTotals = () => {
                                         <li>
                                             <label>
                                                 Fast Cargo: $15.00
-                                                <input type="checkbox" id="fast-cargo" />
+                                                <input type="checkbox" id="fast-cargo" checked={isCheked} onChange={() => setIsCheked(!isCheked)} />
                                             </label>
                                         </li>
                                         <li>
@@ -32,7 +46,7 @@ const CartTotals = () => {
                             <tr>
                                 <th>Total</th>
                                 <td>
-                                    <strong id="cart-total">$316.00</strong>
+                                    <strong id="cart-total">${cartTotals}</strong>
                                 </td>
                             </tr>
                         </tbody>

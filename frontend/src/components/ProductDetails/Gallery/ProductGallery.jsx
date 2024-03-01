@@ -4,7 +4,7 @@ import Data from '../../../data.json'
 import Slider from "react-slick";
 const ProductGallery = () => {
   const [selectedImage, setSelectedImage] = useState(Data[0].img.singleImage)
-  
+  console.log(selectedImage);
   var settings = {
     dots: false,
     infinite: true,
@@ -31,7 +31,7 @@ const ProductGallery = () => {
   return (
     <div className="product-gallery">
       <div className="single-image-wrapper">
-        <img src={selectedImage} id="single-image" alt="" />
+        <img src={`/${selectedImage}`} id="single-image" alt="" />
       </div>
       <div className="product-thumb">
         <div className="glide__track" data-glide-el="track">
@@ -41,7 +41,7 @@ const ProductGallery = () => {
               Data[0].img.thumbs.map((item,index) => (
                 <li onClick={() => setSelectedImage(item)} key={index} className="glide__slide glide__slide--active">
                 <img 
-                src={item} 
+                src={`/${item}`} 
                 alt="" 
                 className={`img-fluid ${selectedImage === item ? 'active' : ''}`} />
               </li>

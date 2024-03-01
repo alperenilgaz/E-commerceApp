@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import SectionTitle from '../SectionTitle/SectionTitle'
 import ProductItem from './ProductItem'
 import Data from '../../data.json'
 import Slider from "react-slick";
 import './product.css'
+
 const Product = () => {
   const [products] = useState(Data)
+
   var settings = {
     dots: true,
     infinite: true,
@@ -55,7 +57,7 @@ const Product = () => {
           <Slider {...settings}>
               {
                 products.map((item) => (
-                    <ProductItem item={item} key={item.id}/>
+                    <ProductItem   item={item} key={item.id}/>
                 ))
               }
             </Slider>  
