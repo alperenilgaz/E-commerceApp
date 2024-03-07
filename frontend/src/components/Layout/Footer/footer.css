@@ -38,7 +38,20 @@
     align-items: center;
     margin-bottom: 10px;
   }
-  
+  .download-app{
+   display: flex;
+   justify-content: flex-start;
+   margin-bottom: 30px; 
+  }
+  .bi-instagram::before{
+    color: #fff;
+    font-size: 40px;
+  }
+  .bi-browser-chrome::before{
+    color: #fff;
+    font-size: 40px;
+
+  }
   .footer .footer-subscribe-bottom form > input {
     flex: 1;
     height: 48px;

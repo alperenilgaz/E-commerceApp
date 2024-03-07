@@ -19,6 +19,8 @@
 
 .categories .category-item .category-image{
         width: 100%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
         transition: transform ease .2s;
 }
 

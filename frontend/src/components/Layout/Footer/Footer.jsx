@@ -27,17 +27,17 @@ function Footer() {
             <div className="footer-contact-top">
               <h3 className="contact-title">
                 Need help? <br />
-                (+90) 123 456 78 90
+                 531 687 30 49
               </h3>
               <p className="contact-desc">We are available 8:00am – 7:00pm</p>
             </div>
             <div className="footer-contact-bottom">
               <div className="download-app">
-                <a href="#">
-                  <img src="/img/footer/app-store.png" alt="" />
+                <a href="https://www.instagram.com/dmgwoody/" target='_blank'>
+                <i class="bi bi-instagram"></i>
                 </a>
-                <a href="#">
-                  <img src="/img/footer/google-play.png" alt="" />
+                <a href="https://www.dincermermer.com.tr" target='_blank'>
+                <i class="bi bi-browser-chrome"></i>
                 </a>
               </div>
               <p className="privacy-text">

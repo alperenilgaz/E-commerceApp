@@ -9,6 +9,7 @@ const MainLayout = ({children}) => {
   return (
     <>
         <Header setisSearchShow={setisSearchShow}/>
+        
         <SearchModal isSearchShow={isSearchShow} setisSearchShow={setisSearchShow}/>
         {children}
         <Footer/>

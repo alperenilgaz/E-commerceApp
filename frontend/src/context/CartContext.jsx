@@ -5,11 +5,11 @@ export const CartContext = createContext()
 const CartProvider = ({children}) => {
     
     const [cardItem, setCardItem] = useState(localStorage.getItem("CardItem") ? JSON.parse(localStorage.getItem("CardItem")) : [] )
-
+    
     useEffect(() => {
         localStorage.setItem("CardItem",JSON.stringify(cardItem))
     },[cardItem])
-
+  
     const AddBasket = (item) => {
         setCardItem((prevCart) => [
             ...prevCart,
@@ -29,7 +29,8 @@ const CartProvider = ({children}) => {
             AddBasket,
             cardItem,
             setCardItem,
-            removeBasket
+            removeBasket,
+          
         }}>
             {children}
         </CartContext.Provider>
