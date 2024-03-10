@@ -60,7 +60,7 @@ router.put("/:categoryId", async(req,res) => {
 
             const existingCategory = await Category.findById(categoryId)
             if(!existingCategory){
-                res.status(404).json({error:"Server Error"})
+              return  res.status(404).json({error:"Server Error"})
         
             }
 

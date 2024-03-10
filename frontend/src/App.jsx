@@ -7,7 +7,7 @@ import CartPage from './Pages/CartPage'
 import BlogPage from './Pages/BlogPage'
 import AuthPage from './Pages/AuthPage'
 import BlogDetailsPage from './Pages/BlogDetailsPage'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 
 
 
@@ -16,7 +16,7 @@ import { Route, Routes } from 'react-router-dom'
 
 function App() {
     
-
+  const user = localStorage.getItem("user")
   return (
     <>
     <Routes>
@@ -25,7 +25,8 @@ function App() {
         <Route path='/contact' element={<ContactPage/>} />
         <Route path='/blog' element={<BlogPage/>} />
         <Route path='/cart' element={<CartPage/>} />
-        <Route path='/auth' element={<AuthPage/>} />
+        {user && <Route path="/auth" element={<Navigate to="/" replace />} />}
+      {!user && <Route path="/auth" element={<AuthPage />} />}
         <Route path='/product/:id' element={<ProductDetailsPage/>} />
         <Route path='/blog/:id' element={<BlogDetailsPage/>} />
     </Routes>

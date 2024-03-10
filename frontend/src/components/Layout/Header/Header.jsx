@@ -4,7 +4,7 @@ import { CartContext } from '../../../context/CartContext'
 import { Link, useLocation } from 'react-router-dom'
 const Header = ({setisSearchShow}) => {
   const {pathname} = useLocation()
-  console.log(pathname);
+  const user = localStorage.getItem("user")
   const {cardItem} = useContext(CartContext)
   return (
     <header>
@@ -181,21 +181,41 @@ const Header = ({setisSearchShow}) => {
           </div>
           <div className="header-right">
             <div className="header-right-links">
-              <Link to="/auth"  className={`menu-link ${pathname === '/auth' ? 'active' :''}`}>
+              {
+               !user && (
+                <Link to="/auth"  className={`menu-link ${pathname === '/auth' ? 'active' :''}`}>
                 <i className="bi bi-person"></i>
               </Link>
+               ) 
+              }
+            
               <button onClick={() => setisSearchShow(true)} className="search-button">
                 <i className="bi bi-search"></i>
               </button>
-              <a href="#">
-                <i className="bi bi-heart"></i>
-              </a>
               <div className="header-cart">
                 <Link to="/cart" className="header-cart-link">
                   <i className="bi bi-bag"></i>
                   <span className="header-cart-count">{cardItem.length}</span>
                 </Link>
               </div>
+              {
+                user && (
+                  <button 
+                  className="search-button"
+                  onClick={() => {
+                    if(window.confirm("Çıkış yapmak istediğinize emin misiniz ?")){
+                    {
+                      localStorage.removeItem("user")
+                      window.location.href = "/"
+                    }       
+                    }
+                  }}
+                  >
+                    <i className="bi bi-box-arrow-right"></i>
+                  </button>
+                )
+              }
+             
             </div>
           </div>
         </div>

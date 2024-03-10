@@ -1,6 +1,7 @@
 const express  = require("express")
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
+const cors = require("cors");
 const mainRouter = require("./router/index.jsx")
 const logger = require("morgan")
 const app = express()
@@ -18,10 +19,12 @@ const MongoConnect = async() => {
 // Middlewares
 
 app.use(express.json())
+app.use(cors());
 
 app.use(logger("dev"))
 
 app.use("/api",mainRouter)
+
 
 app.listen(5000,() => {
     MongoConnect()
