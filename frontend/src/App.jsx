@@ -9,6 +9,11 @@ import AuthPage from './Pages/AuthPage'
 import BlogDetailsPage from './Pages/BlogDetailsPage'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
+import UserPage from './Pages/Admin/UserPage'
+import CategoryPage from './Pages/Admin/Categories/CategoryPage'
+import CategoryUpdatePage from './Pages/Admin/Categories/CategoryUpdatePage'
+import CreateCategoryPage from './Pages/Admin/Categories/CreateCategoryPage'
+
 
 
 
@@ -26,9 +31,17 @@ function App() {
         <Route path='/blog' element={<BlogPage/>} />
         <Route path='/cart' element={<CartPage/>} />
         {user && <Route path="/auth" element={<Navigate to="/" replace />} />}
-      {!user && <Route path="/auth" element={<AuthPage />} />}
+        {!user && <Route path="/auth" element={<AuthPage />} />}
         <Route path='/product/:id' element={<ProductDetailsPage/>} />
         <Route path='/blog/:id' element={<BlogDetailsPage/>} />
+        {/* Admin page router */}
+          <Route path='/admin/*'>
+            <Route path='users' element={<UserPage/>}/>
+            <Route path='categories' element={<CategoryPage/>}/>
+            <Route path='categories/update/:id' element={<CategoryUpdatePage/>}/>
+            <Route path='categories/create' element={<CreateCategoryPage/>}/>
+
+          </Route>
     </Routes>
     </>
   )

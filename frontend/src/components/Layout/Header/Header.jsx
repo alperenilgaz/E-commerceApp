@@ -188,6 +188,14 @@ const Header = ({setisSearchShow}) => {
               </Link>
                ) 
               }
+              {
+               user && (
+                <Link to="/admin"  className={`menu-link ${pathname === '/admin' ? 'active' :''}`}>
+                <i className="bi bi-code-slash"></i>
+              </Link>
+               ) 
+              }
+              
             
               <button onClick={() => setisSearchShow(true)} className="search-button">
                 <i className="bi bi-search"></i>
