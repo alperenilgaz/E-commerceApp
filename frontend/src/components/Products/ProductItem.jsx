@@ -48,9 +48,7 @@ const ProductItem = ({item}) => {
         <button disabled={disableBasket} onClick={() => AddBasket(item)}>
           <i className="bi bi-basket-fill"></i>
         </button>
-        <button>
-          <i className="bi bi-heart-fill"></i>
-        </button>
+       
         <Link to={`/product/${item.id}`}>
           <i className="bi bi-eye-fill"></i>
         </Link>

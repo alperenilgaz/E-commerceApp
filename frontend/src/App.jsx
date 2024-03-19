@@ -13,6 +13,13 @@ import UserPage from './Pages/Admin/UserPage'
 import CategoryPage from './Pages/Admin/Categories/CategoryPage'
 import CategoryUpdatePage from './Pages/Admin/Categories/CategoryUpdatePage'
 import CreateCategoryPage from './Pages/Admin/Categories/CreateCategoryPage'
+import CreateProduct from './Pages/Admin/Products/CreateProductPage'
+import CreateProductPage from './Pages/Admin/Products/CreateProductPage'
+import ProductPage from './Pages/Admin/Products/ProductPage'
+import UpdateProductPage from './Pages/Admin/Products/UpdateProductPage'
+import CouponPage from './Pages/Admin/Coupons/CouponPage'
+import CouponUpdatePage from './Pages/Admin/Coupons/CouponUpdatePage'
+import CreateCouponsPage from './Pages/Admin/Coupons/CreateCouponsPage'
 
 
 
@@ -40,6 +47,12 @@ function App() {
             <Route path='categories' element={<CategoryPage/>}/>
             <Route path='categories/update/:id' element={<CategoryUpdatePage/>}/>
             <Route path='categories/create' element={<CreateCategoryPage/>}/>
+            <Route path='products/create' element={<CreateProductPage/>}/>
+            <Route path='products/update/:id' element={<UpdateProductPage/>}/>
+            <Route path='products' element={<ProductPage/>}/>
+            <Route path='coupons' element={<CouponPage/>}/>
+            <Route path='coupons/create' element={<CreateCouponsPage/>}/>
+            <Route path='coupons/update/:id' element={<CouponUpdatePage/>}/>
 
           </Route>
     </Routes>
