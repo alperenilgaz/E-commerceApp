@@ -5,7 +5,8 @@ import BreadCrumb from './BreadCrumb/BreadCrumb.jsx'
 import ProductGallery from './Gallery/ProductGallery.jsx'
 import ProductInfo from './ProductInfo/ProductInfo.jsx'
 import ProdctTabs from './ProductTabs/ProductTabs.jsx'
-const ProductDetails = () => {
+const ProductDetails = ({singleProduct}) => {
+
   return (
     <section className="single-product">
       <div className="container">
@@ -17,7 +18,7 @@ const ProductDetails = () => {
  
           <div className="single-content">
             <main className="site-main">
-              <ProductGallery/>
+              <ProductGallery singleProduct={singleProduct}/>
               <ProductInfo/>
             </main>
           </div>

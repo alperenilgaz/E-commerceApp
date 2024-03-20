@@ -20,7 +20,6 @@
   transition: 0.3s ease-in-out all;
 }
 
-
 .products .product-item .img1:hover {
   visibility: hidden;
   opacity: 0;
@@ -70,6 +69,7 @@
   color: #ff3c20;
   font-weight: 500;
 }
+
 
 .product-item .product-prices span {
   color: #7d7d7d;

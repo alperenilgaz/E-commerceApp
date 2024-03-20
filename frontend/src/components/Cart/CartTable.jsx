@@ -18,7 +18,7 @@ const CartTable = () => {
     <tbody className="cart-wrapper">
          {
           cardItem.map(cart => (
-            <CartItem key={cart.id} cart={cart}/>
+            <CartItem key={cart._id} cart={cart}/>
           ))
          }
          

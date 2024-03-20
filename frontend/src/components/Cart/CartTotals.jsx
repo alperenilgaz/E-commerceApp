@@ -5,7 +5,7 @@ const CartTotals = () => {
     const {cardItem} = useContext(CartContext)
     const [isCheked, setIsCheked] = useState(false)
     const CardItemsTotal = cardItem.map((item) => {
-        const itemTotal = item.price.newPrice * item.quantity
+        const itemTotal = item.price * item.quantity
         return itemTotal
     
       })
@@ -24,7 +24,7 @@ const CartTotals = () => {
                             <tr className="cart-subtotal">
                                 <th>Subtotal</th>
                                 <td>
-                                    <span id="subtotal">${subTotal}</span>
+                                    <span id="subtotal">{subTotal.toFixed(2)} TL</span>
                                 </td>
                             </tr>
                             <tr>
@@ -33,7 +33,7 @@ const CartTotals = () => {
                                     <ul>
                                         <li>
                                             <label>
-                                                Fast Cargo: $15.00
+                                                Fast Cargo: 15.00TL
                                                 <input type="checkbox" id="fast-cargo" checked={isCheked} onChange={() => setIsCheked(!isCheked)} />
                                             </label>
                                         </li>
@@ -46,7 +46,7 @@ const CartTotals = () => {
                             <tr>
                                 <th>Total</th>
                                 <td>
-                                    <strong id="cart-total">${cartTotals}</strong>
+                                    <strong id="cart-total">{cartTotals.toFixed(2)} TL</strong>
                                 </td>
                             </tr>
                         </tbody>

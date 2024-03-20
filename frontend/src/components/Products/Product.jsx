@@ -1,18 +1,35 @@
-import React, { useContext, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SectionTitle from '../SectionTitle/SectionTitle'
 import ProductItem from './ProductItem'
-import Data from '../../data.json'
+import { message } from 'antd'
 import Slider from "react-slick";
 import './product.css'
 
 const Product = () => {
-  const [products] = useState(Data)
-
+  const apiUrl = import.meta.env.VITE_API_BASE_URL
+  const [products, setProducts] = useState([])
+  
+  useEffect(() => {
+   const fetchProduct = async() => {
+    try {
+      const response = await fetch(`${apiUrl}/api/product`)
+      if(response.ok){
+        const data = await response.json()
+        setProducts(data)
+      }else{
+        message.error("Veri Getirme Başarısız")
+      }
+    } catch (error) {
+      console.log("Veri hatası",error);
+    }
+   }
+   fetchProduct()
+  },[apiUrl])
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 2,
     slidesToScroll: 1,
     nextArrow: <NextBtn/>,
     prevArrow: <PrevBtn/>,
@@ -54,10 +71,10 @@ const Product = () => {
         <SectionTitle title = {"New Arrivals"} desc = {"Summer Collection New Morden Design"}/>
       <div className="product-wrapper product-carousel2">
         <div className="glide__track">
-          <Slider {...settings}>
+          <Slider  {...settings}>
               {
-                products.map((item) => (
-                    <ProductItem   item={item} key={item.id}/>
+                products.map((product) => (
+                  <ProductItem  product={product}/>
                 ))
               }
             </Slider>  

@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import './productGallery.css'
 import Data from '../../../data.json'
 import Slider from "react-slick";
-const ProductGallery = () => {
-  const [selectedImage, setSelectedImage] = useState(Data[0].img.singleImage)
-  console.log(selectedImage);
+const ProductGallery = ({singleProduct}) => {
+  const [selectedImage, setSelectedImage] = useState({
+    img:singleProduct.img[0],
+    imgIndex:0,
+  }
+  )
+  console.log(singleProduct.img[0]);
+  
   var settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow: <NextBtn/>,
@@ -31,19 +36,19 @@ const ProductGallery = () => {
   return (
     <div className="product-gallery">
       <div className="single-image-wrapper">
-        <img src={`/${selectedImage}`} id="single-image" alt="" />
+        <img src={`${selectedImage.img}`} id="single-image" alt="" />
       </div>
       <div className="product-thumb">
         <div className="glide__track" data-glide-el="track">
           <ol className="gallery-thumbs glide__slides">
           <Slider {...settings}>
             {
-              Data[0].img.thumbs.map((item,index) => (
-                <li onClick={() => setSelectedImage(item)} key={index} className="glide__slide glide__slide--active">
+              singleProduct.img.map((item,index) => (
+                <li onClick={() => setSelectedImage({img:item,imgIndex:index})} key={index} className="glide__slide glide__slide--active">
                 <img 
-                src={`/${item}`} 
+                src={`${item}`} 
                 alt="" 
-                className={`img-fluid ${selectedImage === item ? 'active' : ''}`} />
+                className={`img-fluid ${selectedImage.imgIndex === index ? 'active' : ''}`} />
               </li>
               ))
             }

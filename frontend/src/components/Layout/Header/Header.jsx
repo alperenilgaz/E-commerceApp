@@ -190,8 +190,8 @@ const Header = ({setisSearchShow}) => {
               }
               {
                user && (
-                <Link to="/admin"  className={`menu-link ${pathname === '/admin' ? 'active' :''}`}>
-                <i className="bi bi-code-slash"></i>
+                <Link   className={`menu-link ${pathname === '/admin' ? 'active' :''}`}>
+                <i onClick={() => window.location.href = "/admin"} className="bi bi-code-slash"></i>
               </Link>
                ) 
               }
