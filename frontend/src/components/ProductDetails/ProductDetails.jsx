@@ -19,7 +19,7 @@ const ProductDetails = ({singleProduct}) => {
           <div className="single-content">
             <main className="site-main">
               <ProductGallery singleProduct={singleProduct}/>
-              <ProductInfo/>
+              <ProductInfo singleProduct={singleProduct}/>
             </main>
           </div>
          

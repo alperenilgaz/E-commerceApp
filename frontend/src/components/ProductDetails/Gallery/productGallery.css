@@ -19,10 +19,6 @@
     cursor: zoom-in;
   }
   
-  .single-product .gallery-thumbs {
-    /*   display: flex;
-    column-gap: 10px; */
-  }
   
   .single-product .gallery-thumbs li {
     cursor: pointer;
@@ -31,6 +27,10 @@
   
   .single-product .gallery-thumbs li img {
     border: 1px solid transparent;
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    mix-blend-mode: color-burn ;
   }
   
   .single-product .gallery-thumbs li img.active {

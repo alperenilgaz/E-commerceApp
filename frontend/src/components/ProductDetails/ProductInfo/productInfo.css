@@ -53,6 +53,7 @@
   
   .site-main .colors .colors-wrapper {
     display: flex;
+    flex-direction: row;
     column-gap: 4px;
     margin-left: -1px;
   }
@@ -100,22 +101,10 @@
     cursor: pointer;
   }
   
-  .site-main .colors .color-wrapper .blue-color {
-    background-color: blue;
-  }
   
-  .site-main .colors .color-wrapper .red-color {
-    background-color: red;
+  .color{
+    background-color:var(--bgColor);
   }
-  
-  .site-main .colors .color-wrapper .green-color {
-    background-color: green;
-  }
-  
-  .site-main .colors .color-wrapper .purple-color {
-    background-color: purple;
-  }
-  
   .site-main .values {
     display: flex;
     flex-direction: column;
