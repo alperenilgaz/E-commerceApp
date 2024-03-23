@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import './productTabs.css'
 import Reviews from '../../Reviews/Reviews'
-const ProductTabs = () => {
+const ProductTabs = ({singleProduct,setSingleProduct}) => {
     const [active, setactive] = useState("desc")
     const HandleTabsClick = (e,tabs) => {
         e.preventDefault()
         setactive(tabs)
     }
+    
     return (
         <div className="single-tabs">
             <ul className="tab-list">
@@ -27,20 +28,8 @@ const ProductTabs = () => {
                 </li>
             </ul>
             <div className="tab-panel">
-                <div className={`tab-panel-descriptions content ${active === "desc" && 'active'}`} id="desc">
-                    <p>Quisque varius diam vel metus mattis, id aliquam diam rhoncus. Proin vitae magna in dui
-                        finibus malesuada et at nulla. Morbi elit ex, viverra vitae ante vel, blandit feugiat
-                        ligula. Fusce fermentum iaculis nibh, at sodales leo maximus a. Nullam ultricies sodales
-                        nunc, in pellentesque lorem mattis quis. Cras imperdiet est in nunc tristique lacinia.
-                        Nullam aliquam mauris eu accumsan tincidunt. Suspendisse velit ex, aliquet vel ornare
-                        vel, dignissim a tortor.</p>
-                    <br />
-                    <p>Quisque varius diam vel metus mattis, id aliquam diam rhoncus. Proin vitae magna in dui
-                        finibus malesuada et at nulla. Morbi elit ex, viverra vitae ante vel, blandit feugiat
-                        ligula. Fusce fermentum iaculis nibh, at sodales leo maximus a. Nullam ultricies sodales
-                        nunc, in pellentesque lorem mattis quis. Cras imperdiet est in nunc tristique lacinia.
-                        Nullam aliquam mauris eu accumsan tincidunt. Suspendisse velit ex, aliquet vel ornare
-                        vel, dignissim a tortor.</p>
+                <div dangerouslySetInnerHTML={{__html:singleProduct.description}} className={`tab-panel-descriptions content ${active === "desc" && 'active'}`} id="desc">
+                    
                 </div>
                 <div className={`tab-panel-information content ${active === "info" && 'active'}`} id="info">
                     <h3>Additional information</h3>
@@ -50,20 +39,31 @@ const ProductTabs = () => {
                                 <th>Color</th>
                                 <td>
                                     <p>
-                                        Apple Red, Bio Blue, Sweet Orange, Blue, Green, Pink, Black, White</p>
+                                {singleProduct.colors.map((color,key) => (
+                                        <span key={key}>{color}
+                                         {key < singleProduct.sizes.length-1 && ", "}
+                                         </span> 
+                                        ))}                            
+                                   </p>
                                 </td>
                             </tr>
                             <tr>
                                 <th>Size</th>
                                 <td>
                                     <p>
-                                        XXS, XS, S, M, L, XL, XXL</p>
+                                        {singleProduct.sizes.map((size,key) => (
+                                            <span key={key}>{size}
+                                            {key < singleProduct.sizes.length-1 && ", "}
+                                            </span>
+                                            ))}
+                                    </p>
+                                    
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <Reviews active={active==="reviews" ? "content active" : "content"} />
+                <Reviews setSingleProduct={setSingleProduct} singleProduct={singleProduct} active={active==="reviews" ? "content active" : "content"} />
             </div>
         </div>
     )

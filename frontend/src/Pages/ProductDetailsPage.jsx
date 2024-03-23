@@ -30,7 +30,7 @@ const ProductDetailsPage = () => {
 
   return (
     <>
-     {singleProduct ? <ProductDetails singleProduct={singleProduct} /> : <p>Ürün Yükleniyor...</p>}
+     {singleProduct ? <ProductDetails setSingleProduct={setSingleProduct} singleProduct={singleProduct} /> : <p>Ürün Yükleniyor...</p>}
   
       <DialogModal isDialogModal={isDialogModal} setisDialogModal={setisDialogModal}/>
     </>

@@ -1,13 +1,14 @@
 import React, { useContext, useRef } from 'react'
 import './productInfo.css'
 import { CartContext } from '../../../context/CartContext';
-const ProductInfo = ({singleProduct}) => {
+const ProductInfo = ({ singleProduct }) => {
     console.log(singleProduct);
     const quantityRef = useRef()
     const current = singleProduct.price.current
     const discount = singleProduct.price.discount
-    const discountPrice = current - (current*discount)/100
-    const {AddBasket} = useContext(CartContext)
+    const discountPrice = current - (current * discount) / 100
+    const { AddBasket,cardItem } = useContext(CartContext)
+    const filteredCard = cardItem.find((cardItem) => cardItem._id === singleProduct._id) 
     return (
         <div className="product-info">
             <h1 className="product-title">
@@ -27,8 +28,8 @@ const ProductInfo = ({singleProduct}) => {
                 <s className="old-price">{current.toFixed(2)}TL</s>
                 <strong className="new-price">{discountPrice.toFixed(2)}TL</strong>
             </div>
-            <p className="product-description" dangerouslySetInnerHTML={{__html:singleProduct.description}}>
-                
+            <p className="product-description" dangerouslySetInnerHTML={{ __html: singleProduct.description }}>
+
             </p>
             <form className="variations-form">
                 <div className="variations">
@@ -36,18 +37,21 @@ const ProductInfo = ({singleProduct}) => {
                         <div className="colors-label">
                             <span>Color</span>
                         </div>
-                        <div className="color-wrapper">
-                     
-                            {
-                                singleProduct.colors.map(color => (
-                                <label key={color} style={{backgroundColor:`#${color}`}} >
+                        <div className="colors-wrapper">
+                        {singleProduct.colors.map((color, index) => (
+                            <div className="color-wrapper" key={index}>
+                                <label
+                                    style={{
+                                        backgroundColor: `#${color}`,
+                                    }}
+                                >
                                     <input type="radio" name="product-color" />
                                 </label>
-                             
-                                ))
-                            }
-                           
+                            </div>
+                        ))}
                         </div>
+
+
                     </div>
                     <div className="values">
                         <div className="values-label">
@@ -55,7 +59,7 @@ const ProductInfo = ({singleProduct}) => {
                         </div>
                         <div className="values-list">
                             {
-                                singleProduct.sizes.map((size,index) => (
+                                singleProduct.sizes.map((size, index) => (
                                     <span key={index}>{size}</span>
                                 ))
                             }
@@ -63,7 +67,7 @@ const ProductInfo = ({singleProduct}) => {
                     </div>
                     <div className="cart-button">
                         <input ref={quantityRef} type="number" defaultValue="1" min="1" id="quantity" />
-                        <button className="btn btn-lg btn-primary" id="add-to-cart" onClick={() => AddBasket({...singleProduct,price:discountPrice,quantity:parseInt(quantityRef.current.value)}) } type="button">Sepete Ekle</button>
+                        <button disabled={filteredCard} className="btn btn-lg btn-primary" id="add-to-cart" onClick={() => AddBasket({ ...singleProduct, price: discountPrice, quantity: parseInt(quantityRef.current.value) })} type="button">Sepete Ekle</button>
                     </div>
                     <div className="product-extra-buttons">
                         <a href="#">

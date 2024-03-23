@@ -5,7 +5,7 @@ import BreadCrumb from './BreadCrumb/BreadCrumb.jsx'
 import ProductGallery from './Gallery/ProductGallery.jsx'
 import ProductInfo from './ProductInfo/ProductInfo.jsx'
 import ProdctTabs from './ProductTabs/ProductTabs.jsx'
-const ProductDetails = ({singleProduct}) => {
+const ProductDetails = ({singleProduct,setSingleProduct}) => {
 
   return (
     <section className="single-product">
@@ -23,7 +23,7 @@ const ProductDetails = ({singleProduct}) => {
             </main>
           </div>
          
-    <ProdctTabs/>
+    <ProdctTabs setSingleProduct={setSingleProduct} singleProduct={singleProduct}/>
 
         </div>
       </div>
