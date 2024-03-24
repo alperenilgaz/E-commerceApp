@@ -52,10 +52,11 @@ const Reviews = ({active,singleProduct,setSingleProduct}) => {
       </ol>
     </>
     </div>: <h3>Hiç yorum yok !</h3>}
-    <div className="review-form-wrapper">
+    {localStorage.getItem("user") ?  <div className="review-form-wrapper">
       <h2>Yorum ekle</h2>
       <ReviewForm setSingleProduct={setSingleProduct} singleProduct={singleProduct}/>
-    </div>
+    </div> : <h3 onClick={() => window.location.href = "/auth"}>Yorum yapmak için giriş yapınız <i style={{cursor:"pointer", color:"blue"}}>Giriş Yap</i></h3>}
+   
     
   </div>
   )

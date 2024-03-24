@@ -82,4 +82,17 @@ router.delete("/:productId",async(req,res) => {
     }
 })
 
+// ürünleri isme göre getirme (get-product-by-name)
+
+router.get("/search/:productName",async(req,res) => {
+    try {
+        const productName = req.params.productName
+        const products = await Product.find({
+            name:{$regex : productName, $options:"i"}
+        })
+        res.status(200).json(products)
+    } catch (error) {
+        res.status(500).json({error:"Server Error"})    
+    }
+})
 module.exports = router
