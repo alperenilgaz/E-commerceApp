@@ -8,7 +8,7 @@ const SearchModal = ({isSearchShow,setisSearchShow}) => {
   const handleClose = () => {
     setisSearchShow(false)
     setSearchResult(null)
-    productName=""
+    
   }
   const handleSearch =  async(e) => {
     e.preventDefault()

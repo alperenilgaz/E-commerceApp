@@ -8,7 +8,7 @@ const CartItem = ({cart}) => {
     <td></td>    
     <td className="cart-image">
         <img src={cart.img[0]} alt="" />
-        <i onClick={() => removeBasket(cart.id)} className="bi bi-x delete-cart" data-id="1"></i>
+        <i onClick={() => removeBasket(cart._id)} className="bi bi-x delete-cart" data-id="1"></i>
     </td>
     <td>{cart.name}</td>
     <td>{cart.price.toFixed(2)} TL</td>

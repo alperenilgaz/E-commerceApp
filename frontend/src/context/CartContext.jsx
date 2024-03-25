@@ -21,7 +21,9 @@ const CartProvider = ({children}) => {
       }
 
     const removeBasket =(itemId) => {
-        const filteredBasket = cardItem.filter((item) => item.id !==itemId)
+        const filteredBasket = cardItem.filter((item) =>{
+            return item._id !== itemId
+        })
         setCardItem(filteredBasket)
     }
     return(
