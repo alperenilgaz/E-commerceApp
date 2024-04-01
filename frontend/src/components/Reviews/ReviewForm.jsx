@@ -14,6 +14,10 @@ const ReviewForm = ({singleProduct,setSingleProduct}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if(rating === 0){
+      message.warning("Puan seçiniz ")
+      return;
+    }
     const formData = {
       reviews:[
          ...singleProduct.reviews,
@@ -91,7 +95,7 @@ const ReviewForm = ({singleProduct,setSingleProduct}) => {
             Yorumun
             <span className="required">*</span>
           </label>
-          <textarea value={review} onChange={(e) => setReview(e.target.value)} id="comment" cols="50" rows="10"></textarea>
+          <textarea required value={review} onChange={(e) => setReview(e.target.value)} id="comment" cols="50" rows="10"></textarea>
         </div>
         <div className="comment-form-cookies">
           <input id="cookies" type="checkbox" />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './searchModal.css'
 import { message } from 'antd'
+import { Link } from 'react-router-dom'
 const SearchModal = ({isSearchShow,setisSearchShow}) => {
   const [searchResult, setSearchResult] = useState(null)
   const apiUrl = import.meta.env.VITE_API_BASE_URL
@@ -59,14 +60,14 @@ const SearchModal = ({isSearchShow,setisSearchShow}) => {
          {
          searchResult?.length > 0  && 
          searchResult?.map(result => (
-            <a key={result._id} href="#" className="result-item">
+            <Link to={`/product/${result._id}`} key={result._id} href="#" className="result-item">
             <img src={result.img[0]} className="search-thumb" alt="" />
             <div className="search-info">
               <h4>{result.name}</h4>
               <span className="search-sku">SKU: PD0016</span>
               <span className="search-price">{result.price.current}</span>
             </div>
-          </a>
+          </Link>
           ))
         } 
           

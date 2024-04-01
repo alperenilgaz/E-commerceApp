@@ -130,6 +130,22 @@ const AdminLayout = ({ children }) => {
       },
     },
   ];
+
+    const getPageTitle = () => {
+      for(const item of menuItems){
+        if(item.children){
+          for(const child of item.children){
+            if(child.path===window.location.pathname){
+              return child.label
+            }
+          }
+        }else{
+          if(item.path===window.location.pathname){
+            return item.label
+          }
+        }
+      }
+    }
   if (userRole === "admin") {
     return (
       <div style={{backgroundColor:"#000"}}  className="admin-layout">
@@ -148,12 +164,16 @@ const AdminLayout = ({ children }) => {
           <Layout>
             <Header>
               <div>
-                <h2 style={{
+               
+                <div style={{
                   color: "#fff",
                   display: "flex",
                   justifyContent: "space-between",
-
-                }}>ADMİN PANEL</h2>
+                }}>
+                  <h2>{getPageTitle()}</h2>
+                  <h2>ADMİN PANEL</h2>
+                </div>
+                
               </div>
             </Header>
             <Content>

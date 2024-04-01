@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './productGallery.css'
 import Data from '../../../data.json'
 import Slider from "react-slick";
 const ProductGallery = ({singleProduct}) => {
   const [selectedImage, setSelectedImage] = useState({
-    img:singleProduct.img[0],
+    img:"",
     imgIndex:0,
   }
   )
-  console.log(singleProduct.img[0]);
+  useEffect(() => {
+    setSelectedImage({ img:singleProduct.img[0],imgIndex:0})
+
+  },[singleProduct.img])
   
   var settings = {
     dots: false,

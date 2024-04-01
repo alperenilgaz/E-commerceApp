@@ -50,18 +50,18 @@ const Login = () => {
                     <div>
                         <label>
                             <span>Username or email address <span className="required">*</span></span>
-                            <input onChange={handleSubmit} name='email' type="text" />
+                            <input required onChange={handleSubmit} name='email' type="text" />
                         </label>
                     </div>
                     <div>
                         <label>
                             <span>Password <span className="required">*</span></span>
-                            <input onChange={handleSubmit} name='password' type="password" />
+                            <input required onChange={handleSubmit} name='password' type="password" />
                         </label>
                     </div>
                     <p className="remember">
                         <label>
-                            <input type="checkbox" />
+                            <input required type="checkbox" />
                             <span>Remember me</span>
                         </label>
                         <button className="btn btn-sm">Login</button>

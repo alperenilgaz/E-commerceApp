@@ -46,19 +46,19 @@ const Register = () => {
                 <div>
                     <label>
                         <span>Username <span className="required">*</span></span>
-                        <input onChange={handleSubmit} type="text" name='username' />
+                        <input required onChange={handleSubmit} type="text" name='username' />
                     </label>
                 </div>
                 <div>
                     <label>
                         <span>Email address <span className="required">*</span></span>
-                        <input onChange={handleSubmit} type="email" name='email' />
+                        <input required onChange={handleSubmit} type="email" name='email' />
                     </label>
                 </div>
                 <div>
                     <label>
                         <span>Password <span className="required">*</span></span>
-                        <input onChange={handleSubmit} type="password" name='password' />
+                        <input required onChange={handleSubmit} type="password" name='password' />
                     </label>
                 </div>
                 <div className="privacy-policy-text remember">

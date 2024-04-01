@@ -20,6 +20,7 @@ import UpdateProductPage from './Pages/Admin/Products/UpdateProductPage'
 import CouponPage from './Pages/Admin/Coupons/CouponPage'
 import CouponUpdatePage from './Pages/Admin/Coupons/CouponUpdatePage'
 import CreateCouponsPage from './Pages/Admin/Coupons/CreateCouponsPage'
+import DashboardPage from './Pages/Admin/DashboardPage'
 
 
 
@@ -44,6 +45,7 @@ function App() {
         {/* Admin page router */}
           <Route path='/admin/*'>
             <Route path='users' element={<UserPage/>}/>
+            <Route index element={<DashboardPage/>}/>
             <Route path='categories' element={<CategoryPage/>}/>
             <Route path='categories/update/:id' element={<CategoryUpdatePage/>}/>
             <Route path='categories/create' element={<CreateCategoryPage/>}/>
