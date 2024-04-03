@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import './searchModal.css'
 import { message } from 'antd'
 import { Link } from 'react-router-dom'
+import { Spin } from 'antd';
 const SearchModal = ({isSearchShow,setisSearchShow}) => {
   const [searchResult, setSearchResult] = useState(null)
+  const [loading, setLoading] = useState(false)
   const apiUrl = import.meta.env.VITE_API_BASE_URL
-
+  
   const handleClose = () => {
     setisSearchShow(false)
     setSearchResult(null)
@@ -18,6 +20,7 @@ const SearchModal = ({isSearchShow,setisSearchShow}) => {
       message.warning("boş karakter arayamazsınız")
       return;
     }
+    setLoading(true)
     try {
       const res = await fetch(`${apiUrl}/api/product/search/${productName.trim()}`)
       if(!res.ok){
@@ -28,6 +31,8 @@ const SearchModal = ({isSearchShow,setisSearchShow}) => {
       setSearchResult(data)
     } catch (error) {
       console.log(error);
+    }finally{
+      setLoading(false)
     }
   }
   console.log(searchResult)
@@ -36,6 +41,7 @@ const SearchModal = ({isSearchShow,setisSearchShow}) => {
     <div className="modal-wrapper">
       <h3 className="modal-title">Search for products</h3>
       <p className="modal-text">Start typing to see products you are looking for.</p>
+      <Spin style={{display:"flex",justifyContent:"center",alignItems:"center"}} spinning={loading}/>
       <form className="search-form" onSubmit={handleSearch}>
         <input type="text" placeholder="Search a product" />
         <button>

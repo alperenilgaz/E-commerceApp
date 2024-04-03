@@ -1,4 +1,12 @@
-* Kullanıcı coupon code girdiğinde sadece o klullanıcı için 
+[] Kullanıcı coupon code girdiğinde sadece o klullanıcı için 
 coupon codu nasıl sileriz
+[x] Search kısmına load spinner ekle
 
-* Search kısmına load spinner ekle
+TODO
+-----
+1- Admin Panel Logo Alanı - Dinamik Logo []
+2- Blog İşlemleri ve Blog Detauy Sayfası []
+3- Contact sayfası ve admin paneli bağlantısı []
+4- Profil sayfası oluşturma ve dinamikleştirme []
+5- Kategoriye göre ürünlerin listelendiği sayfanın oluşturulması []
+6- Slider ekleme alanı ve admin panle bağlantısı []
