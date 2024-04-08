@@ -1,6 +1,27 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import emailjs from '@emailjs/browser';
+import {message} from "antd"
 import './contact.css'
 const Contact = () => {
+    const form = useRef()
+
+    const handleData = (e) => {
+        e.preventDefault()
+        emailjs
+      .sendForm("service_lvjrxyp", "template_gbevpfw", form.current, {
+        publicKey: 'Q1zAMki4heKJAnDUb',
+      })
+      .then(
+        () => {
+            window.location.href="/"
+            message.success("Mesaj Başarıyla Gönderildi.")
+        },
+        (error) => {
+          message.error("Mesaj Gönderilirken Bir Hata Oluştu!")
+        },
+      );
+    }
+ 
   return (
     <section className="contact">
     <div className="contact-top">
@@ -14,43 +35,36 @@ const Contact = () => {
     <div className="contact-bottom">
         <div className="container">
             <div className="contact-titles">
-                <h4>Contact with us</h4>
-                <h2>Get In Touch</h2>
+                <h4>Bizimle iletişime geç</h4>
+                <h2>İletişime geç</h2>
                 <p>In hac habitasse platea dictumst. Pellentesque viverra sem nec orci lacinia, in bibendum urna
                     mollis. Quisque nunc lacus, varius vel leo a, pretium lobortis metus. Vivamus consectetur
                     consequat justo.</p>
             </div>
             <div className="contact-elements">
-                <form className="contact-form">
+                <form ref={form} onSubmit={handleData} className="contact-form">
                     <div className="">
                         <label>
-                            Your Name
+                            İSİM
                             <span>*</span>
                         </label>
-                        <input type="text" required />
+                        <input name="name" type="text" required />
                     </div>
                     <div className="">
                         <label>
-                            Your email
+                            EMAİL
                             <span>*</span>
                         </label>
-                        <input type="text" required />
+                        <input  name="email" type="text" required />
                     </div>
                     <div className="">
                         <label>
-                            Subject
+                            MESAJINIZ
                             <span>*</span>
                         </label>
-                        <input type="text" required />
+                        <textarea  name="message" id="author"  type="text"  size="30" required=""></textarea>
                     </div>
-                    <div className="">
-                        <label>
-                            Your message
-                            <span>*</span>
-                        </label>
-                        <textarea id="author" name="author" type="text"  size="30" required=""></textarea>
-                    </div>
-                    <button className="btn btn-sm form-button">Send Message</button>
+                    <button type='submit' value="Send" className="btn btn-sm form-button">Mesajı Gönder</button>
                 </form>
                 <div className="contact-info">
                     <div className="contact-info-item">

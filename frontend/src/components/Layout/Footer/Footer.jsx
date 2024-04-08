@@ -1,5 +1,6 @@
 import React from 'react'
 import './footer.css'
+import Logo from '../../../../public/img/logo.png'
 function Footer() {
   return (
     <footer className="footer">
@@ -9,27 +10,24 @@ function Footer() {
           <div className="footer-subscribe-wrapper">
             <div className="footer-subscribe">
               <div className="footer-subscribe-top">
-                <h3 className="subscribe-title">Get our emails for info on new items, sales and more.</h3>
-                <p className="subscribe-desc">We'll email you a voucher worth $10 off your first order over $50.</p>
+                <h3 className="subscribe-title">Bir problem  yaşıyorsanız email adresinizi gönderin biz size ulaşalım</h3>
               </div>
               <div className="footer-subscribe-bottom">
                 <form>
                   <input type="text" placeholder="Enter your email address." />
                   <button className="btn">Subscribe</button>
                 </form>
-                <p className="privacy-text">
-                  By subscribing you agree to our <a href="#">Terms & Conditions and Privacy & Cookies Policy.</a>
-                </p>
+             
               </div>
             </div>
           </div>
           <div className="footer-contact-wrapper">
             <div className="footer-contact-top">
               <h3 className="contact-title">
-                Need help? <br />
+                Yardıma mı ihtiyacınız var ? <br />
                  531 687 30 49
               </h3>
-              <p className="contact-desc">We are available 8:00am – 7:00pm</p>
+              <p className="contact-desc">Saat 8.00 ile 18.00 arası arayabilirsiniz</p>
             </div>
             <div className="footer-contact-bottom">
               <div className="download-app">
@@ -40,10 +38,7 @@ function Footer() {
                 <i class="bi bi-browser-chrome"></i>
                 </a>
               </div>
-              <p className="privacy-text">
-                <strong>Shopping App:</strong> Try our View in Your Room feature, manage registries and save payment
-                info.
-              </p>
+          
             </div>
           </div>
         </div>
@@ -54,7 +49,9 @@ function Footer() {
         <div className="footer-widgets">
           <div className="brand-info">
             <div className="footer-logo">
-               <a href="index.html" className="logo">LOGO</a>
+               <a href="index.html" className="logo">
+               <img style={{width:"35%"}} src={Logo} alt="" />
+               </a>
             </div>
             <div className="footer-desc">
               <p> Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis

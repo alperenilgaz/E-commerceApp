@@ -20,34 +20,34 @@ const CartTotals = () => {
     
   return (
     <div className="cart-totals">
-                    <h2>Cart totals
+                    <h2>Sepet Toplamı
                     </h2>
                     <table>
                         <tbody>
                             <tr className="cart-subtotal">
-                                <th>Subtotal</th>
+                                <th>Toplam</th>
                                 <td>
                                     <span id="subtotal">{subTotal.toFixed(2)} TL</span>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Shipping</th>
+                                <th>Kargo</th>
                                 <td>
                                     <ul>
                                         <li>
                                             <label>
-                                                Fast Cargo: 15.00TL
+                                                Hızlı Kargo: 15.00TL
                                                 <input type="checkbox" id="fast-cargo" checked={isCheked} onChange={() => setIsCheked(!isCheked)} />
                                             </label>
                                         </li>
                                         <li>
-                                            <a href="#">Change Address</a>
+                                            <a href="#">Adresi Değiştir</a>
                                         </li>
                                     </ul>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Total</th>
+                                <th>Toplam</th>
                                 <td>
                                     <strong id="cart-total">{cartTotals.toFixed(2)} TL</strong>
                                 </td>
@@ -55,7 +55,7 @@ const CartTotals = () => {
                         </tbody>
                     </table>
                     <div className="checkout">
-                        <button className="btn btn-lg">Proceed to checkout</button>
+                        <button className="btn btn-lg">Ödemeye Git</button>
                     </div>
                 </div>
   )

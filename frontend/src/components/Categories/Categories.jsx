@@ -29,7 +29,7 @@ const Categories = () => {
   return (
     <section className="categories">
     <div className="container">
-        <SectionTitle title={"All Categories"} desc={"Summer Collection New Morden Design"}/>
+        <SectionTitle title={"Bütün Kategoriler"} desc={"Size Uygun Modern Tasarımlar"}/>
       <ul className="category-list">
         {categories.map((category) => (
             <CategoryItem key={category._id} category={category}/>

@@ -68,7 +68,7 @@ const Product = () => {
   return (
     <section className="products">
     <div className="container">
-        <SectionTitle title = {"New Arrivals"} desc = {"Summer Collection New Morden Design"}/>
+        <SectionTitle title = {"Ürünlerimiz"} desc = {"El işlemesi ile yapılmış ürünlerimiz"}/>
       <div className="product-wrapper product-carousel2">
         <div className="glide__track">
           <Slider  {...settings}>

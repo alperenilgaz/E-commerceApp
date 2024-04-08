@@ -32,12 +32,10 @@ const CartCoupon = () => {
   return (
     <div className="actions-wrapper">
     <div className="coupon">
-        <input onChange={(e) => setCouponCode(e.target.value)} type="text" className="input-text" placeholder="Coupon code" />
-        <button type='button' onClick={applyCoupon} className="btn">Apply Coupon</button>
+        <input onChange={(e) => setCouponCode(e.target.value)} type="text" className="input-text" placeholder="Kupon Kod" />
+        <button type='button' onClick={applyCoupon} className="btn">Kuponu Uygula</button>
     </div>
-    <div className="update-cart">
-        <button className="btn">Update Cart</button>
-    </div>
+  
 </div>
   )
 }

@@ -13,12 +13,12 @@ const ProductItem = ({product}) => {
   return (
     <div className="product-item glide__slide">
     <div className="product-image">
-      <a href="#">
+      <Link to={`/product/${product._id}`}>
         <img src={product.img[0]} alt="" className="img1" />
         
         <img src={product.img[1]} alt="" className="img2" />
         
-      </a>
+      </Link>
     </div>
     <div className="product-info">
       <a href="$" className="product-title">{product.name}</a>
