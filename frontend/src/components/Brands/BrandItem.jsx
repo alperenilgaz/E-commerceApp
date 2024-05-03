@@ -1,20 +1,16 @@
-import React from 'react'
+import { message } from 'antd'
+import React, { useEffect, useState } from 'react'
 
-const BrandItem = () => {
-    const brandImages = [
-        'img/brands/brand1.png',
-        'img/brands/brand2.png',
-        'img/brands/brand3.png',
-        'img/brands/brand4.png',
-        'img/brands/brand5.png',
-    ];
+const BrandItem = ({brands}) => {
+  
   return (
     <>
         {
-            brandImages.map((url,key) => (
-                <li key={key} className="brand-item">
+            brands.map(brand => (
+                <li key={brand._id} className="brand-item">
                 <a href="#">
-                    <img src={url} alt=""/>
+                    <img src={brand.img} alt=""/>
+                    <p style={{textAlign:"center"}}>{brand.name}</p>
                     
                 </a>
             </li>

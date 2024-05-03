@@ -4,6 +4,7 @@ import { Layout, Menu } from 'antd';
 
 import {
   UserOutlined,
+  AreaChartOutlined,
   LaptopOutlined,
   RollbackOutlined,
   BarcodeOutlined,
@@ -123,6 +124,30 @@ const AdminLayout = ({ children }) => {
     },
     {
       key: "13",
+      icon: <AreaChartOutlined />,
+      label: "Marklar",
+      path: "/",
+      children: [
+        {
+          key: "14",
+          label: "Marka Listesi",
+          path: "/admin/products",
+          onClick: () => {
+            navigate(`/admin/brands`);
+          },
+        },
+        {
+          key: "15",
+          label: "Yeni Marka Oluştur",
+          path: "/admin/products/create",
+          onClick: () => {
+            navigate("/admin/brands/create");
+          },
+        },
+      ],
+    },
+    {
+      key: "16",
       icon: <RollbackOutlined />,
       label: "Ana Sayfaya Git",
       onClick: () => {

@@ -1,12 +1,11 @@
-[] Kullanıcı coupon code girdiğinde sadece o klullanıcı için 
-coupon codu nasıl sileriz
-[x] Search kısmına load spinner ekle
-
-TODO
------
-1- Admin Panel Logo Alanı - Dinamik Logo []
-2- Blog İşlemleri ve Blog Detauy Sayfası [x]
-3- Contact sayfası ve admin paneli bağlantısı []
-4- Profil sayfası oluşturma ve dinamikleştirme []
-5- Kategoriye göre ürünlerin listelendiği sayfanın oluşturulması []
-6- Slider ekleme alanı ve admin panle bağlantısı []
+[x] brandslar dinamik hale gelecek
+[] Hakkımızda sayfası dinamik hale gelecek
+[] Sayfa açılışındaki Sliderlar dinamik hale gelecek
+[] homepage 'deki singleCampaign dinamik hale gelecek
+[] Shop Kısmındaki image dinamik hale gelecek
+[] Admin panelindeki görsel yükleme alanları dosya tipine dönüşecek
+[] User token siteye entegre edilecek
+[] Sitenin responsive görünümünde bozuk olan yerler düzeltilecek
+[] Gerekirse admin sayfası için responsive görünüm yapılacak
+[] Siteye Ödeme sistemi entegre edilecek
+[] responsive görünüm için dropdown yapılacak

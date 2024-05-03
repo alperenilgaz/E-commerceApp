@@ -8,6 +8,7 @@ const CreateCategoryPage = () => {
     const [loading, setLoading] = useState(false)
     const [form] = Form.useForm()
     
+    
     const onFinish = async (value) => {
         try {
             setLoading(true)
@@ -20,6 +21,8 @@ const CreateCategoryPage = () => {
             })
             if (response.ok) {
                 message.success("Kategori başarıyla oluşturuldu")
+                console.log(form)
+    
                 form.resetFields()
                 
 
@@ -65,7 +68,7 @@ const CreateCategoryPage = () => {
                         },
                     ]}
                 >
-                    <Input />
+                    <Input/>
                 </Form.Item>
 
                 <Button type="primary" htmlType="submit">

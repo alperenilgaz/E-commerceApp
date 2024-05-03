@@ -21,6 +21,10 @@ import CouponPage from './Pages/Admin/Coupons/CouponPage'
 import CouponUpdatePage from './Pages/Admin/Coupons/CouponUpdatePage'
 import CreateCouponsPage from './Pages/Admin/Coupons/CreateCouponsPage'
 import DashboardPage from './Pages/Admin/DashboardPage'
+import UserDetailPage from './Pages/UserDetailPage'
+import BrandPage from './Pages/Admin/Brands/BrandPage'
+import CreateBrandsPage from './Pages/Admin/Brands/CreateBrandsPage'
+import UpdateBrandPage from './Pages/Admin/Brands/UpdateBrandPage'
 
 
 
@@ -38,6 +42,7 @@ function App() {
         <Route path='/contact' element={<ContactPage/>} />
         <Route path='/blog' element={<BlogPage/>} />
         <Route path='/cart' element={<CartPage/>} />
+        <Route path='/user' element={<UserDetailPage/>} />
         {user && <Route path="/auth" element={<Navigate to="/" replace />} />}
         {!user && <Route path="/auth" element={<AuthPage />} />}
         <Route path='/product/:id' element={<ProductDetailsPage/>} />
@@ -55,6 +60,9 @@ function App() {
             <Route path='coupons' element={<CouponPage/>}/>
             <Route path='coupons/create' element={<CreateCouponsPage/>}/>
             <Route path='coupons/update/:id' element={<CouponUpdatePage/>}/>
+            <Route path='brands' element={<BrandPage/>}/>
+            <Route path='brands/create' element={<CreateBrandsPage/>}/>
+            <Route path='brands/update/:id' element={<UpdateBrandPage/>}/>
 
           </Route>
     </Routes>

@@ -6,6 +6,7 @@ import Categories from '../components/Categories/Categories'
 import Product from '../components/Products/Product'
 
 import Brands from '../components/Brands/Brands'
+import Campaigns from '../components/Campaigns/Campaigns'
 
 
 const HomePage = () => {
@@ -15,6 +16,7 @@ const HomePage = () => {
         <Slider/>
         <Categories/>
         <Product/>
+        <Campaigns/>
         <Brands/>
         
         </>
