@@ -1,5 +1,5 @@
 [x] brandslar dinamik hale gelecek
-[] Hakkımızda sayfası dinamik hale gelecek
+[x] Hakkımızda sayfası dinamik hale gelecek
 [] Sayfa açılışındaki Sliderlar dinamik hale gelecek
 [] homepage 'deki singleCampaign dinamik hale gelecek
 [] Shop Kısmındaki image dinamik hale gelecek

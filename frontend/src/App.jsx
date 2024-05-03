@@ -25,6 +25,9 @@ import UserDetailPage from './Pages/UserDetailPage'
 import BrandPage from './Pages/Admin/Brands/BrandPage'
 import CreateBrandsPage from './Pages/Admin/Brands/CreateBrandsPage'
 import UpdateBrandPage from './Pages/Admin/Brands/UpdateBrandPage'
+import AboutPage from './Pages/Admin/About/AboutPage'
+import CreateAboutPage from './Pages/Admin/About/CreateAboutPage'
+import UpdateAboutPage from './Pages/Admin/About/UpdateAboutPage'
 
 
 
@@ -63,6 +66,9 @@ function App() {
             <Route path='brands' element={<BrandPage/>}/>
             <Route path='brands/create' element={<CreateBrandsPage/>}/>
             <Route path='brands/update/:id' element={<UpdateBrandPage/>}/>
+            <Route path='about' element={<AboutPage/>}/>
+            <Route path='about/create' element={<CreateAboutPage/>}/>
+            <Route path='about/update/:id' element={<UpdateAboutPage/>}/>
 
           </Route>
     </Routes>

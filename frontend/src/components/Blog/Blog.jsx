@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Slider from "react-slick";
 import './blog.css'
-import home from '../../../public/img/about-us/about-us.png'
+import home from '../../../public/img/about-us/about-us1.png'
+import { message } from 'antd';
+import BlogItem from './BlogItem';
 
 const Blog = () => {
+  const [about, setAbout] = useState([])
+  const apiUrl = import.meta.env.VITE_API_BASE_URL
+
+  useEffect(() => {
+   const fetchAbout = async() => {
+    try {
+        const response = await fetch(`${apiUrl}/api/about`)
+        if(response.ok){
+          const data = await response.json()
+          setAbout(data)
+        }else{
+          message.error("Veri getirme hatası")
+        }
+    } catch (error) {
+      console.log(error)      
+    }
+   }
+   fetchAbout()
+
+  },[apiUrl])
+
   var settings = {
     dots: true,
     infinite: true,
@@ -28,29 +51,19 @@ function PrevBtn({onClick}){
         </button>
   )
 }
+
+
   return (
     <section className="blogs">
 
 
 <Slider {...settings}>
-      <div>
-        <img style={{width:"100%",aspectRatio:3/2}} src={home} alt="" />
-      </div>
-      <div>
-      <img style={{width:"100%",aspectRatio:3/2}} src={home} alt="" />
-      </div>
-      <div>
-      <img style={{width:"100%",aspectRatio:3/2}} src={home} alt="" />
-      </div>
-      <div>
-      <img style={{width:"100%",aspectRatio:3/2}} src={home} alt="" />
-      </div>
-      <div>
-      <img style={{width:"100%",aspectRatio:3/2}} src={home} alt="" />
-      </div>
-      <div>
-      <img style={{width:"100%",aspectRatio:3/2}} src={home} alt="" />
-      </div>
+      {
+        about.map(img => (
+          <BlogItem img={img} key={img._id}/>
+        ))
+      }
+      
     </Slider>
     <div className="description">
       <div className="header">

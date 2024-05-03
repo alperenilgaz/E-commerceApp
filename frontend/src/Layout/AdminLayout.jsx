@@ -11,6 +11,7 @@ import {
   DashboardOutlined,
   ShoppingCartOutlined,
   AppstoreOutlined,
+  FileImageOutlined 
 } from "@ant-design/icons";
 
 import { useNavigate } from 'react-router-dom';
@@ -146,8 +147,34 @@ const AdminLayout = ({ children }) => {
         },
       ],
     },
+
     {
       key: "16",
+      icon: <BarcodeOutlined />,
+      label: "Hakkımızda Resimler",
+      path: "/admin/about",
+      children: [
+        {
+          key: "17",
+          label: "Resim Listesi",
+          path: "/admin/about",
+          onClick: () => {
+            navigate(`/admin/about`);
+          },
+        },
+        {
+          key: "18",
+          label: "Yeni bir resim Oluştur",
+          path: "/admin/about/create",
+          onClick: () => {
+            navigate("/admin/about/create");
+          },
+        },
+      ],
+    },
+    
+    {
+      key: "19",
       icon: <RollbackOutlined />,
       label: "Ana Sayfaya Git",
       onClick: () => {

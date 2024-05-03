@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
-const About = require("../models/AboutUs")
-const Brand = require("../models/Brand")
-const { update } = require("three/examples/jsm/libs/tween.module.js")
+const About = require("../models/About.jsx")
+
+
 
 // yeni bir about oluşturma
 
@@ -50,7 +50,7 @@ router.get("/:aboutId",async(req,res) => {
  router.delete("/:aboutId",async(req,res) => {
     try {
         const aboutId = req.params.aboutId
-        const deletedAbout = await About.deletOne({_id:aboutId})
+        const deletedAbout = await About.deleteOne({_id:aboutId})
         if(deletedAbout.deletedCount===0){
             return res.status(404).json({error:"About Image not found"})
         }
@@ -62,12 +62,12 @@ router.get("/:aboutId",async(req,res) => {
 
 // belirli bir aboutu güncelleme
 
-router.put("/:brandId",async(req,res) => {
+router.put("/:aboutId",async(req,res) => {
     try {
         const aboutId = req.params.aboutId
         const updates = req.body
         
-        const existingAbout = await Brand.findById(aboutId)
+        const existingAbout = await About.findById(aboutId)
         if(!existingAbout){
             return res.status(404).json({error:"server error"})
         }
@@ -78,6 +78,10 @@ router.put("/:brandId",async(req,res) => {
         )
         res.status(200).json(updatesAbout)
     } catch (error) {
+        console.log(error)
         res.status(500).json({error:"Server Error"})
+        
     }
 })
+
+module.exports = router
