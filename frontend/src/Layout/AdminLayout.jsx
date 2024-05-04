@@ -6,6 +6,8 @@ import {
   UserOutlined,
   AreaChartOutlined,
   LaptopOutlined,
+  HomeOutlined,
+  GlobalOutlined,
   RollbackOutlined,
   BarcodeOutlined,
   DashboardOutlined,
@@ -172,9 +174,25 @@ const AdminLayout = ({ children }) => {
         },
       ],
     },
-    
     {
       key: "19",
+      icon: <AppstoreOutlined />,
+      label: "Anasayfa Resim",
+      path: "/",
+      onClick: () => {
+        navigate("admin/slider")
+      }
+    },
+    {
+      key: "20",
+      icon: < GlobalOutlined/>,
+      label: "Logo",
+      onClick: () => {
+        navigate(`/admin/logo`);
+      },
+    },
+    {
+      key: "21",
       icon: <RollbackOutlined />,
       label: "Ana Sayfaya Git",
       onClick: () => {

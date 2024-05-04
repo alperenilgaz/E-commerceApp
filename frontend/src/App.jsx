@@ -28,6 +28,10 @@ import UpdateBrandPage from './Pages/Admin/Brands/UpdateBrandPage'
 import AboutPage from './Pages/Admin/About/AboutPage'
 import CreateAboutPage from './Pages/Admin/About/CreateAboutPage'
 import UpdateAboutPage from './Pages/Admin/About/UpdateAboutPage'
+import SliderPage from './Pages/Admin/Slider/SliderPage'
+import UpdateSliderPage from './Pages/Admin/Slider/UpdateSliderPage'
+import LogoPage from './Pages/Admin/Logo/LogoPage'
+import UpdateLogo from './Pages/Admin/Logo/UpdateLogo'
 
 
 
@@ -69,6 +73,10 @@ function App() {
             <Route path='about' element={<AboutPage/>}/>
             <Route path='about/create' element={<CreateAboutPage/>}/>
             <Route path='about/update/:id' element={<UpdateAboutPage/>}/>
+            <Route path='slider' element={<SliderPage/>}/>
+            <Route path='slider/update/:id' element={<UpdateSliderPage/>}/>
+            <Route path='logo' element={<LogoPage/>}/>
+            <Route path='logo/update/:id' element={<UpdateLogo/>}/>
 
           </Route>
     </Routes>

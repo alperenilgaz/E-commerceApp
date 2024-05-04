@@ -2,12 +2,15 @@ import React, { useContext, useEffect, useState } from 'react'
 import './Header.css'
 import { CartContext } from '../../../context/CartContext'
 import { Link, useLocation } from 'react-router-dom'
-import Logo from '../../../../public/img/logo.png'
 import { message } from 'antd'
+import Logo from '../../../../public/img/logo.png'
+
 const Header = ({setisSearchShow}) => {
+
   const {pathname} = useLocation()
   const user = localStorage.getItem("user")
   const [categories, setcategories] = useState([])
+  const [logo, setLogo] = useState([])
   const {cardItem} = useContext(CartContext)
   const apiUrl = import.meta.env.VITE_API_BASE_URL
 
@@ -25,8 +28,26 @@ const Header = ({setisSearchShow}) => {
         console.log({error:"Server Error"});
       }
     }
+    const fetchLogo = async() => {
+      try {
+        const response = await fetch(`${apiUrl}/api/logo`)
+        if(response.ok){
+          const data = await response.json()
+          setLogo(data)
+        }else{
+          message.error("veri getirme hatası")
+        }
+    } catch (error) {
+      console.log(error);
+    }
+     }
+     fetchLogo()
     fetchCategories()
   },[apiUrl])
+
+  console.log(logo.img);
+
+
 
   return (
     <header>
@@ -40,7 +61,13 @@ const Header = ({setisSearchShow}) => {
           </div>
           <div className="header-left">
             <Link to='/' href="index.html" className="logo">
-              <img style={{width:"35%"}} src={Logo} alt="" />
+                {
+                  logo.map(src => (
+                    <img style={{width:"35%"}} src={src.img} alt="" />
+                  ))
+                }
+            
+              
             </Link>
           </div>
           <div className="header-center" id="sidebar">

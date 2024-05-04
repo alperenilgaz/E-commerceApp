@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './footer.css'
 import Logo from '../../../../public/img/logo.png'
+import { message } from 'antd'
 function Footer() {
+  const apiUrl = import.meta.env.VITE_API_BASE_URL
+  const [logo, setLogo] = useState([])
+  
+  useEffect(() => {
+    const fetchLogo = async() => {
+     try {
+       const response = await fetch(`${apiUrl}/api/logo`)
+       if(response.ok){
+         const data = await response.json()
+         setLogo(data)
+       }else{
+         message.error("veri getirme hatası")
+       }
+   } catch (error) {
+     console.log(error);
+   }
+    }
+    fetchLogo()
+   },[apiUrl])
   return (
     <footer className="footer">
     <div className="subscribe-row">
@@ -50,7 +70,15 @@ function Footer() {
           <div className="brand-info">
             <div className="footer-logo">
                <a href="index.html" className="logo">
-               <img style={{width:"35%"}} src={Logo} alt="" />
+
+              {
+                logo.map(src => (
+                  <img style={{width:"35%"}} src={src.img} alt="" />
+                ))
+              }
+            
+                 
+               
                </a>
             </div>
             <div className="footer-desc">
