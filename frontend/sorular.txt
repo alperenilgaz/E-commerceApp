@@ -1,8 +1,9 @@
 [x] brandslar dinamik hale gelecek
 [x] Hakkımızda sayfası dinamik hale gelecek
 [x] Sayfa açılışındaki Sliderlar dinamik hale gelecek
-[] logo Kısmı dinamik hale gelecek
+[x] logo Kısmı dinamik hale gelecek
 [] homepage 'deki singleCampaign dinamik hale gelecek
+(fakat image css üzerinden alınmışsa nasıl yapıcaz)
 [] Admin panelindeki görsel yükleme alanları dosya tipine dönüşecek
 [] User token siteye entegre edilecek
 [] Sitenin responsive görünümünde bozuk olan yerler düzeltilecek
