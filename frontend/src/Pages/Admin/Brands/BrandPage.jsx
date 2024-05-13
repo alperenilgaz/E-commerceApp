@@ -1,8 +1,5 @@
 import { Button, Popconfirm, Space, Table, message } from 'antd';
 import React, { useCallback, useEffect, useState } from 'react'
-import {
-  QuestionCircleOutlined
-} from "@ant-design/icons";
 import { useNavigate } from 'react-router-dom';
 const BrandPage = () => {
   const [dataSource, setdataSource] = useState([])

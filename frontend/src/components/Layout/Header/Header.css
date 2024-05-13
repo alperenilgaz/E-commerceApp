@@ -33,6 +33,7 @@ header{
     cursor: pointer;
     display: none;
 }
+
 .header-center .bi-x-circle {
     display: none;
 }

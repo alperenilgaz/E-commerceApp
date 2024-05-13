@@ -9,10 +9,11 @@ const UpdateBrandPage = () => {
   const apiUrl = import.meta.env.VITE_API_BASE_URL
   const params = useParams()
   const brandId = params.id
+  
   const onFinish = async(value) => {
       try {
           setLoading(true)
-          const response = await fetch(`${apiUrl}/api/brands`,{
+          const response = await fetch(`${apiUrl}/api/brands/${brandId}`,{
               method:'PUT',
               headers:{
                   "Content-type":"application/json"
@@ -39,7 +40,7 @@ const UpdateBrandPage = () => {
       try {
           const response = await fetch(`${apiUrl}/api/brands/${brandId}`)
           if(!response.ok){
-            throw new Error("verileri getirme hatası")
+            throw new Error("Veri getirme hatası")
           }
           const data = await response.json()
           if(data){

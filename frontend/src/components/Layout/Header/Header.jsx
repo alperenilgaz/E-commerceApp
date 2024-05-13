@@ -45,14 +45,14 @@ const Header = ({setisSearchShow}) => {
     fetchCategories()
   },[apiUrl])
 
-  console.log(logo.img);
+
 
 
 
   return (
     <header>
         <header>
-
+  
     <div className="header-row">
       <div className="container">
         <div className="header-wrapper">

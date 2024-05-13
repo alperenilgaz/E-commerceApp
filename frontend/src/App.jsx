@@ -32,6 +32,10 @@ import SliderPage from './Pages/Admin/Slider/SliderPage'
 import UpdateSliderPage from './Pages/Admin/Slider/UpdateSliderPage'
 import LogoPage from './Pages/Admin/Logo/LogoPage'
 import UpdateLogo from './Pages/Admin/Logo/UpdateLogo'
+import CampaignPage from './Pages/Admin/Campaign/CampaignPage'
+import { useContext } from 'react'
+import { CartContext } from './context/CartContext'
+import UpdateCampaignPage from './Pages/Admin/Campaign/UpdateCampaignPage'
 
 
 
@@ -39,7 +43,7 @@ import UpdateLogo from './Pages/Admin/Logo/UpdateLogo'
 
 
 function App() {
-    
+  
   const user = localStorage.getItem("user")
   return (
     <>
@@ -77,7 +81,9 @@ function App() {
             <Route path='slider/update/:id' element={<UpdateSliderPage/>}/>
             <Route path='logo' element={<LogoPage/>}/>
             <Route path='logo/update/:id' element={<UpdateLogo/>}/>
-
+            <Route path='campaign' element={<CampaignPage/>}/>
+            <Route path='campaign/update/:id' element={<UpdateCampaignPage/>}/>
+            
           </Route>
     </Routes>
     </>

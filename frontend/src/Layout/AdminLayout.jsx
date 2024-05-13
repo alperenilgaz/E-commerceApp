@@ -7,6 +7,7 @@ import {
   AreaChartOutlined,
   LaptopOutlined,
   HomeOutlined,
+  InfoCircleOutlined,
   GlobalOutlined,
   RollbackOutlined,
   BarcodeOutlined,
@@ -19,6 +20,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 const { Sider, Header, Content } = Layout
+console.log(window.location.pathname);
 const getUserRole = () => {
   const user = JSON.parse(localStorage.getItem("user"))
   return user ? user.role : null
@@ -33,7 +35,7 @@ const AdminLayout = ({ children }) => {
       icon: <DashboardOutlined />,
       label: "Dashboard",
       onClick: () => {
-        navigate(`/admin`);
+        navigate(`/admin/`);
       },
     },
     {
@@ -134,7 +136,7 @@ const AdminLayout = ({ children }) => {
         {
           key: "14",
           label: "Marka Listesi",
-          path: "/admin/products",
+          path: "/admin/brands",
           onClick: () => {
             navigate(`/admin/brands`);
           },
@@ -142,7 +144,7 @@ const AdminLayout = ({ children }) => {
         {
           key: "15",
           label: "Yeni Marka Oluştur",
-          path: "/admin/products/create",
+          path: "/admin/brands/create",
           onClick: () => {
             navigate("/admin/brands/create");
           },
@@ -178,7 +180,7 @@ const AdminLayout = ({ children }) => {
       key: "19",
       icon: <AppstoreOutlined />,
       label: "Anasayfa Resim",
-      path: "/",
+      path: "/admin/slider",
       onClick: () => {
         navigate("admin/slider")
       }
@@ -187,12 +189,22 @@ const AdminLayout = ({ children }) => {
       key: "20",
       icon: < GlobalOutlined/>,
       label: "Logo",
+      path: "/admin/logo",
       onClick: () => {
         navigate(`/admin/logo`);
       },
     },
     {
       key: "21",
+      icon: <InfoCircleOutlined />,
+      label: "Reklam Panosu",
+      path: "/admin/campaign",
+      onClick: () => {
+        navigate(`/admin/campaign`);
+      },
+    },
+    {
+      key: "22",
       icon: <RollbackOutlined />,
       label: "Ana Sayfaya Git",
       onClick: () => {

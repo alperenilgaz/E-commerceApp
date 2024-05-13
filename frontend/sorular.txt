@@ -2,11 +2,13 @@
 [x] Hakkımızda sayfası dinamik hale gelecek
 [x] Sayfa açılışındaki Sliderlar dinamik hale gelecek
 [x] logo Kısmı dinamik hale gelecek
-[] homepage 'deki singleCampaign dinamik hale gelecek
+[x] homepage 'deki singleCampaign dinamik hale gelecek
 (fakat image css üzerinden alınmışsa nasıl yapıcaz)
+[x] Gerekirse admin sayfası için responsive görünüm yapılacak
+[] Sitenin responsive görünümünde bozuk olan yerler düzeltilecek
 [] Admin panelindeki görsel yükleme alanları dosya tipine dönüşecek
 [] User token siteye entegre edilecek
-[] Sitenin responsive görünümünde bozuk olan yerler düzeltilecek
-[] Gerekirse admin sayfası için responsive görünüm yapılacak
 [] Siteye Ödeme sistemi entegre edilecek
 [] responsive görünüm için dropdown yapılacak
+[] coupon işlemleri hatalı düzeltilecek
+[] user varsa profile kısmı profil güncelleme ile değiştirlecek

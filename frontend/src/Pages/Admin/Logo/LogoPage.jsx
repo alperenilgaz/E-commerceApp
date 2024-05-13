@@ -57,7 +57,7 @@ const LogoPage = () => {
     ];
 
     return (
-        <Table loading={loading}  dataSource={dataSource} columns={columns} />
+        <Table rowKey={(record) => record._id} loading={loading}  dataSource={dataSource} columns={columns} />
     )
 }
 
