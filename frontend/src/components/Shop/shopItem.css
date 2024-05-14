@@ -1,0 +1,87 @@
+.shop .shop-item{
+    text-align: center;
+    background-color: #efefef;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    position: relative;
+}
+.shop .shop-item img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    transition: transform ease .2s;
+    transition: 0.3s ease-in-out all;
+  }
+
+.shop .shop-item .img1:hover{
+    visibility: hidden;
+    opacity: 0;
+}  
+
+.shop .shop-item .shop-image:hover .img2{
+    visibility: visible;
+    opacity: 1;
+}
+.shop .shop-item .img2{
+    display: flex;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.shop .shop-item .shop-title{
+    font-size: 14px;
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 15px;
+}
+.shop .shop-item .shop-star {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+    column-gap: 2px;
+  }
+  
+.shop .shop-item .shop-star i {
+    font-size: 12px;
+    color: gold;
+}
+
+.shop-item .shop-prices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    padding-bottom: 15px;
+}
+
+.shop-item .shop-prices strong{
+    color: #ff3c20;
+    font-weight: 500;
+}
+
+.shop-item .shop-prices span{
+    color: #7d7d7d;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.shop .shop-item .shop-discount{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #ff3c20;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: #fff;
+    top: 15px;
+    right: 15px;
+    font-size: 12px;
+    font-weight: 500px;
+
+}

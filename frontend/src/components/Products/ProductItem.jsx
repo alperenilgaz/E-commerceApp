@@ -21,7 +21,7 @@ const ProductItem = ({product}) => {
       </Link>
     </div>
     <div className="product-info">
-      <a href="$" className="product-title">{product.name}</a>
+      <Link to={`/product/${product._id}`}><a className="product-title">{product.name}</a></Link>
       <ul className="product-star">
         <li>
           <i className="bi bi-star-fill"></i>
@@ -56,9 +56,9 @@ const ProductItem = ({product}) => {
         <Link to={`/product/${product._id}`}>
           <i className="bi bi-eye-fill"></i>
         </Link>
-        <a href="#">
-          <i className="bi bi-share-fill"></i>
-        </a>
+        <Link to={`/product/${product._id}`}>
+        <i class="bi bi-arrow-right"></i>
+        </Link>
       </div>
     </div>
   </div>

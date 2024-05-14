@@ -3,7 +3,7 @@ import './Header.css'
 import { CartContext } from '../../../context/CartContext'
 import { Link, useLocation } from 'react-router-dom'
 import { message } from 'antd'
-import Logo from '../../../../public/img/logo.png'
+import Modal from 'react-modal';
 
 const Header = ({setisSearchShow}) => {
 
@@ -13,6 +13,12 @@ const Header = ({setisSearchShow}) => {
   const [logo, setLogo] = useState([])
   const {cardItem} = useContext(CartContext)
   const apiUrl = import.meta.env.VITE_API_BASE_URL
+  const [modalIsOpen, setmodalIsOpen] = useState(false)
+  
+  const toogleClick = () => {
+    setmodalIsOpen(!modalIsOpen)  
+  }
+  
 
   useEffect(() => {
     const fetchCategories =  async() => {
@@ -57,7 +63,26 @@ const Header = ({setisSearchShow}) => {
       <div className="container">
         <div className="header-wrapper">
           <div className="header-mobile">
-            <i className="bi bi-list" id="btn-menu"></i>
+            <i onClick={toogleClick} className="bi bi-list" id="btn-menu"></i>
+            <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={toogleClick}
+              className={`Modal ${modalIsOpen ? 'open' :''} `}
+              overlayClassName={`overlay ${modalIsOpen ? 'open' :''} `}
+              shouldCloseOnOverlayClick={true}
+              shouldCloseOnEsc={true}
+              
+           
+            >
+              <ul className='header-mobile-menu'>
+                <li onClick={toogleClick} className='cls-icn'><i className="bi bi-x-lg"></i></li>
+                <Link onClick={toogleClick} to="/"><li>Anasayfa</li></Link>
+                <Link onClick={toogleClick}  to='shop'><li>Ürünler</li></Link>
+                <Link onClick={toogleClick}  to='blog'><li>Hakkımızda</li></Link>
+                <Link onClick={toogleClick}  to='contact'><li>İletişim</li></Link>
+                
+              </ul>
+        </Modal>
           </div>
           <div className="header-left">
             <Link to='/' href="index.html" className="logo">

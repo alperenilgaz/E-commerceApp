@@ -15,7 +15,7 @@
 .products .product-item img {
   width: 100%;
   aspect-ratio: 3/2;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform ease .2s;
   transition: 0.3s ease-in-out all;
 }

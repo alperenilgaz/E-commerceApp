@@ -5,15 +5,12 @@ import Product from '../components/Products/Product'
 
 import Policy from '../components/Layout/Policy/Policy'
 import Footer from '../components/Layout/Footer/Footer'
+import Shop from '../components/Shop/Shop'
 const ShopPage = () => {
   return (
     <>
-      <Categories/>
-      <Product/>
-
-      <Product/>
-      <Policy/>
-
+     <Policy/>
+      <Shop/>
     </>
   )
 }
