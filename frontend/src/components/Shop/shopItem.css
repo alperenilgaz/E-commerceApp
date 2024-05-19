@@ -83,5 +83,44 @@
     right: 15px;
     font-size: 12px;
     font-weight: 500px;
-
 }
+
+.shop-item .shop-links{
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 8px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-out all;
+    overflow: hidden;
+}
+
+.shop .shop-item:hover .shop-links{
+    transform: translate(15px);
+    opacity: 1;
+    visibility: visible;
+}
+
+.shop-item .shop-links button,
+.shop-item .shop-links a {
+    background-color: #000;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all ease 0.3s;
+}
+
+.shop-item .shop-links button:hover,
+.shop-item .shop-links a:hover {
+  opacity: 0.7;
+}
+
+.shop-item .shop-links i {
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    pointer-events: none;
+  }

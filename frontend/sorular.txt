@@ -5,10 +5,12 @@
 [x] homepage 'deki singleCampaign dinamik hale gelecek
 (fakat image css üzerinden alınmışsa nasıl yapıcaz)
 [x] Gerekirse admin sayfası için responsive görünüm yapılacak
-[] Sitenin responsive görünümünde bozuk olan yerler düzeltilecek
+[x] Sitenin responsive görünümünde bozuk olan yerler düzeltilecek
+[x] responsive görünüm için dropdown yapılacak
 [] Admin panelindeki görsel yükleme alanları dosya tipine dönüşecek
-[] User token siteye entegre edilecek
+[] User token siteye entegre edilecek-jwt
 [] Siteye Ödeme sistemi entegre edilecek
-[] responsive görünüm için dropdown yapılacak
 [] coupon işlemleri hatalı düzeltilecek
 [] user varsa profile kısmı profil güncelleme ile değiştirlecek
+[] react ile bir proje oluştur react router yapısını kullan sadece 2 sayfa olsun yayınla githubda daha sonra urlden direk a sayfasına
+erişmeye çalışman lazım

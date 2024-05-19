@@ -73,7 +73,7 @@ function Footer() {
 
               {
                 logo.map(src => (
-                  <img style={{width:"35%"}} src={src.img} alt="" />
+                  <img key={src._id} style={{width:"35%"}} src={src.img} alt="" />
                 ))
               }
             

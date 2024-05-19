@@ -9,7 +9,7 @@ const Header = ({setisSearchShow}) => {
 
   const {pathname} = useLocation()
   const user = localStorage.getItem("user")
-  const [categories, setcategories] = useState([])
+
   const [logo, setLogo] = useState([])
   const {cardItem} = useContext(CartContext)
   const apiUrl = import.meta.env.VITE_API_BASE_URL
@@ -21,19 +21,6 @@ const Header = ({setisSearchShow}) => {
   
 
   useEffect(() => {
-    const fetchCategories =  async() => {
-      try {
-        const res = await fetch(`${apiUrl}/api/categories`)
-        if(res.ok){
-          const data = await res.json()
-          setcategories(data)
-        }else{
-          message.error("Kategoriler getirilemedi")
-        }
-      } catch (error) {
-        console.log({error:"Server Error"});
-      }
-    }
     const fetchLogo = async() => {
       try {
         const response = await fetch(`${apiUrl}/api/logo`)
@@ -48,7 +35,7 @@ const Header = ({setisSearchShow}) => {
     }
      }
      fetchLogo()
-    fetchCategories()
+  
   },[apiUrl])
 
 
@@ -106,39 +93,8 @@ const Header = ({setisSearchShow}) => {
                 <li className="menu-list-item megamenu-wrapper">
                   <Link to="/shop" className={`menu-link ${pathname === '/shop' ? 'active' :''}`}>
                     Shop
-                    <i className="bi bi-chevron-down"></i>
                   </Link>
-                  <div className="menu-dropdown-wrapper">
-                    <div className="menu-dropdown-megamenu">
-                      <div className="megamenu-links">
-                        <div className="megamenu-products">
-                          <h3 className="megamenu-products-title">
-                            Kategoriler
-                          </h3>
-                          <ul className="megamenu-menu-list">
-                             {
-                              categories.map(category => (
-                                <li style={{marginTop:"15px"}} key={category._id}>
-                                <a href="#">{category.name}</a>
-                              </li>
-                            
-                              ))
-                             }
-                          </ul>
-                        </div>
-                        
-                        
-                      </div>
-                      <div className="megamenu-single">
-                        <a href="#">
-                          <img style={{width:"70%"}} src="/img/campaigns/banner2.png" alt="" />
-                        </a>
-                        <h3 className="megamenu-single-title">DMGHOME AİLESİNE HEMEN KATILIN</h3>
-                        <h4 className="megamenu-single-subtitle">Bütünüyle el yapımı ürünler için şimdi</h4>
-                        <Link to='/shop' href="#" className="megamenu-single-button btn btn-sm">Keşfet</Link>
-                      </div>
-                    </div>
-                  </div>
+                  
                 </li>
                 <li className="menu-list-item">
                   <Link to="/blog" className={`menu-link ${pathname === '/blog' ? 'active' :''}`}>

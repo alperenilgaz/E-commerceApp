@@ -7,8 +7,8 @@ const CartTotals = () => {
     const CardItemsTotal = cardItem.map((item) => {
         const itemTotal = item.price * item.quantity
         return itemTotal
-    
       })
+     
       const subTotal = CardItemsTotal.reduce((prevValue,currentValue) => {
         return prevValue+currentValue
       },0)
