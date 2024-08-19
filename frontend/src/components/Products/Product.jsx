@@ -77,6 +77,7 @@ const Product = () => {
                   <ProductItem  product={product}/>
                 ))
               }
+            
             </Slider>  
         </div>
         <div className="glide__arrows" data-glide-el="controls">
